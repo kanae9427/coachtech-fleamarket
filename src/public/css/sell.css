@@ -1,0 +1,35 @@
+input[type="file"] {
+    display: none;
+}
+
+.category-label {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+/* チェックボックスを非表示にする */
+.category-label input[type="checkbox"] {
+    display: none;
+}
+
+/* チェックボックスのラベルが選択されたときの見た目 */
+.category-label input[type="checkbox"]:checked+span {
+    color: white;
+    background-color: #333;
+    border-color: #333;
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+/* ホバー時のエフェクト */
+.category-label:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,16 @@
+.favorite-button {
+    background-color: #ccc;
+    /* デフォルトの色（未登録） */
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.favorite-button.favorited {
+    background-color: #ff4081;
+    /* お気に入り済みの色（ピンク） */
+    color: white;
+}
