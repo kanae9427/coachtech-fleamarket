@@ -1,64 +1,74 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Coachtech FleaMarket
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 環境構築  
 
-## About Laravel
+Dockerビルド  
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. git clone git@github.com:kanae9427/coachtech-fleamarket.git
+2. docker-compose up -d --build  
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+＊MySQLは、OSによって起動しない場合があるのでそれぞれのｐｃに合わせてdocker-compose.ymlファイルを編集してください。  
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel環境構築  
 
-## Learning Laravel
+1. docker-compose exec php bash  
+2. composer install
+3. env.exampleファイルから.envを作成し、環境変数を変更
+4. php artisan key:generate
+5. php artisan migrate
+6. php artisan storage:link
+7. php artisan db:seed  
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## メール送信（Mailtrap）  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+開発環境でのメール送信確認には [Mailtrap](https://mailtrap.io/) を使用しています。  
 
-## Laravel Sponsors
+### 設定手順
+`.env` に以下の設定を追加してください：
+MAIL_MAILER=smtp  
+MAIL_HOST=sandbox.smtp.mailtrap.io  
+MAIL_PORT=2525  
+MAIL_USERNAME=your-mailtrap-username
+（Mailtrap の SMTP ユーザー名）  
+MAIL_PASSWORD=your-mailtrap-password
+（Mailtrap の SMTP パスワード）  
+MAIL_ENCRYPTION=null  
+MAIL_FROM_ADDRESS=example@example.com  
+MAIL_FROM_NAME="Example App"  
+  
+MAIL_ENCRYPTION=null は Mailtrap の仕様上、暗号化が不要なためです。もし送信に失敗する場合は tls を試してください。  
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 💳 決済機能（Stripe）  
 
-### Premium Partners
+本プロジェクトは [Stripe](https://stripe.com/jp) を使用してテストモードのクレジットカード決済とコンビニ決済を実装しています。
+> ※ コンビニ決済はテストモードでは有効化せずに使用できます
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+`.env` に以下を追加してください：  
+STRIPE_KEY=pk_test_あなたの公開キー  
+STRIPE_SECRET=sk_test_あなたのシークレットキー  
 
-## Contributing
+テスト用カード番号：4242 4242 4242 4242  
+有効期限：未来の日付（例：12/34）  
+CVC：任意（例：123）  
+> Stripe はテストモードで動作しています。  
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## テスト環境のセットアップ
 
-## Code of Conduct
+本プロジェクトでは、PHPUnit による単体テストが整備されています。  
+テスト実行時には `.env.testing` が読み込まれますので、以下のように作成してください：  
+cp .env .env.testing  
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### テストの実行方法
 
-## Security Vulnerabilities
+```bash
+php artisan test
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 使用技術  
+* PHP 7.4.9
+* Laravel 8.83.8
+* MySQL（実体は MariaDB 10.3.39）
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## URL  
+* 開発環境：http://localhost/
+* phpMyAdmin:http://localhost:8080/
