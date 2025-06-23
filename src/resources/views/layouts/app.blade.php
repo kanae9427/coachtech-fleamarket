@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coachtechフリマ</title>
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/common.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('css')
 </head>
 
@@ -19,24 +19,24 @@
                 </a>
             </div>
 
-            <!-- 検索フォーム -->
             <form method="get" action="{{ route('home') }}" class="search-form">
                 <input type="text" name="search" class="form-control" value="{{ request('search') }}" placeholder="なにをお探しですか？">
-                <button type="submit" class="btn btn-primary">検索</button>
             </form>
 
-            @guest
-            <a class="header__link" href="/login">ログイン</a>
-            @endguest
+            <div class="header-actions">
+                @guest
+                <a class="header__login-link" href="/login">ログイン</a>
+                @endguest
 
-            @auth
-            <form class="form" action="/logout" method="post">
-                @csrf
-                <input class="header__link" type="submit" value="ログアウト">
-            </form>
-            @endauth
-            <a class="header__link" href="/mypage">マイページ</a>
-            <a class="header__link" href="/sell">出品</a>
+                @auth
+                <form class="form" action="/logout" method="post">
+                    @csrf
+                    <input class="header__logout-link" type="submit" value="ログアウト">
+                </form>
+                @endauth
+                <a class="header__mypage-link" href="/mypage">マイページ</a>
+                <a class="header__sell-button" href="/sell">出品</a>
+            </div>
         </header>
         <div class="content">
             @yield('content')

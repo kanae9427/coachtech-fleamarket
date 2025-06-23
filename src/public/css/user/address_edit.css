@@ -1,0 +1,70 @@
+.shipping_address-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.shipping_address__heading {
+    position: absolute;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: clamp(25px, 2.4vw, 36px);
+    color: #000000;
+    width: 18vw;
+    height: 4.5vh;
+    top: 11.52vh;
+    left: 40.1vw;
+}
+
+.shipping_address-box{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 44.98vw;
+    height: 40.9vh;
+    top: 28.05vh;
+    left: 27.55vw;
+}
+
+.shipping_address-form-group {
+    display: flex;
+    flex-direction: column;
+    width: 44.98vw;
+    height: 8.25vh;
+}
+
+.shipping_address-label {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 24px);
+    line-height: 100%;
+    margin: 0.4vh 0;
+}
+
+.shipping_address-input {
+    width: 100%;
+    max-width: 680px;
+    height: 100%;
+    max-height: 45px;
+    border-radius: 4px;
+    border-width: 1px;
+    border: 1px solid #5F5F5F
+}
+
+.update-btn{
+    position: absolute;
+    width: 44.97vw;
+    height: 6.15vh;
+    top: 80.18vh;
+    left: 27.55vw;
+    border: none;
+    background: #FF5555;
+    border-radius: 5px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(18px, 1.7vw, 26px);
+    text-align: center;
+    color: #fff;
+}

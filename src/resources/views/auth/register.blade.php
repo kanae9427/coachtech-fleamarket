@@ -1,15 +1,15 @@
-@extends('layouts.app')
+@extends('layouts/auth_app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/register.css') }}">
+<link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
 @endsection
 
 @section('content')
 <div class="register-form">
-    <h2 class="register-form__heading">会員登録</h2>
-    <div class="register-form__inner">
-        <form class="register-form__form" action="{{ route('register') }}" method="post">
-            @csrf
+    <form class="register-form__form" action="{{ route('register') }}" method="post">
+        @csrf
+        <div class="register-form__inner">
+            <h2 class="register-form__heading">会員登録</h2>
             <div class="register-form__group">
                 <label class="register-form__label" for="name">ユーザー名</label>
                 <input class="register-form__input" type="text" name="account_name" id="name" value="{{ old('account_name') }}">
@@ -46,12 +46,15 @@
                     @enderror
                 </p>
             </div>
-            <input class="register-form__btn btn" type="submit" value="登録する">
-        </form>
-    </div>
+        </div>
 
-    <div class="login__link">
-        <a class="login__button-submit" href="/login">ログインはこちら</a>
-    </div>
+        <div class="form-submit">
+            <input class="register-form__btn btn" type="submit" value="登録する">
+        </div>
+    </form>
+</div>
+
+<div class="login__link">
+    <a class="switch-to-login" href="/login">ログインはこちら</a>
 </div>
 @endsection

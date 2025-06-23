@@ -32,7 +32,7 @@ class SellController extends Controller
 
     public function show($item_id)
     {
-        $item = Item::findOrFail($item_id); // item_idを使って商品を取得
-        return view('item', compact('item')); // 詳細画面用のビューにデータを渡す
+        $item = Item::findOrFail($item_id);
+        return view('item', compact('item'));
     }
 }

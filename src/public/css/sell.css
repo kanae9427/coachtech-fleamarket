@@ -1,35 +1,380 @@
-input[type="file"] {
+.sell-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sell-form__heading {
+    position: absolute;
+    width: 19.92vw;
+    height: 4.5vh;
+    margin: 0;
+    top: 13.41vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(25px, 2.4vw, 36px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-form__group{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45vw;
+    height: 19vh;
+    top: 22.2vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-form__heading{
+    width: 45vw;
+    height: 3.7vh;
+    margin: 0;
+    top: 22.2vh;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 24px);
+}
+.image-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    height: 15.3vh;
+    border: 1px dashed #5F5F5F;
+    border-radius: 4px;
+    border-width: 1px;
+}
+
+.d-none {
     display: none;
 }
 
-.category-label {
-    display: inline-block;
-    padding: 10px 15px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    background-color: #f8f8f8;
+.image-form__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10.94vw;
+    height: 4.45vh;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    margin: 5px;
+    border-radius: 10px;
+    border: 2px solid #FF5555;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(10px, 1.3vw, 16px);
+    color:#FF5655;
+}
+
+.sell-form__subheading--first{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 45vw;
+    height: 4.9vh;
+    margin: 0;
+    top: 48.3vh;
+    left: 27.53vw;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 30px);
+    color: #5F5F5F;
+    border-bottom: 1px solid #5F5F5F;
+    border-width: 1px;
+    transform: rotate(0deg);
+}
+
+.category__group{
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    width: 45vw;
+    height: 23.95vh;
+    top: 56.89vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.category-form__group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.category-form__heading{
+    width: 45vw;
+    height: 3.7vh;
+    margin: 0;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 24px);
+}
+
+.category-label {
+    display: flex;
+    padding: 0.68vh 1vw;
+    margin-top: 3.3vh;
+    margin-left: 1.26vw;
+    border: 2px solid #FF5655;
+    border-radius: 200px;
+    cursor: pointer;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: clamp(10px, 1vw, 15px);
+    color:#FF5655;
+    line-height: 100%;
 }
 
 /* チェックボックスを非表示にする */
-.category-label input[type="checkbox"] {
+.category-checkbox {
     display: none;
 }
 
 /* チェックボックスのラベルが選択されたときの見た目 */
-.category-label input[type="checkbox"]:checked+span {
+.category-checkbox:checked + label.category-label {
     color: white;
-    background-color: #333;
-    border-color: #333;
-    padding: 8px 12px;
-    border-radius: 6px;
+    background: #FF5655;
+    border: 2px solid #FF5655;
 }
 
-/* ホバー時のエフェクト */
-.category-label:hover {
-    background-color: #e0e0e0;
+.condition-form__group{
+    position: absolute;
+    flex-direction: column;
+    align-items: center;
+    width: 45vw;
+    height: 9.5vh;
+    top: 87.4vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.condition-form__label{
+    width: 45vw;
+    height: 3.7vh;
+    margin: 0;
+    top: 22.2vh;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(16px, 1.6vw, 24px);
+}
+
+.condition-wrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 45vw;
+    height: 4.5vh;
+}
+.condition-form__select{
+    width: 45vw;
+    height: 4.5vh;
+    padding-left: 1vw;
+    padding-right: 2.5vw;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(10px, 1.3vw, 16px);
+    color: #5F5F5F;
+    border-width: 1px;
+    border-radius: 4px;
+    border: 1.5px solid #B1B1B1;
+    color: #5F5F5F;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.condition-form__select option {
+    background: #636769;
+    color: #EAEAEA;
+    font-size: clamp(10px, 0.9vw, 14px);
+}
+
+.condition-form__select option:hover {
+    background: #5599EB;
+}
+
+.triangle {
+    position: absolute;
+    right: 1vw;
+    pointer-events: none;
+    font-size: clamp(16px, 1.4vw, 20px);
+    line-height: 1;
+    transform: scaleX(0.9);
+    color: #5F5F5F;
+}
+
+.sell-form__subheading--second {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 45vw;
+    height: 4.7vh;
+    margin: 0;
+    top: 103.9vh;
+    left: 27.53vw;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(20px, 2vw, 30px);
+    color: #5F5F5F;
+    border-bottom: 1px solid #5F5F5F;
+    border-width: 1px;
+    transform: rotate(0deg);
+}
+
+.name-form__group{
+    position: absolute;
+    width: 45vw;
+    height: 8.3vh;
+    top: 112.25vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.name-form__label {
+    margin: 0;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(15px, 1.6vw, 24px);
+}
+
+.name-form__input {
+    width: 45vw;
+    height: 4.6vh;
+    border-width: 1px;
+    border-radius: 4px;
+    border: 1px solid #5F5F5F;
+    font-size: clamp(15px, 1.6vw, 24px);
+    color: #000000;
+}
+
+.brand_name-form__group{
+    position: absolute;
+    width: 45vw;
+    height: 8.3vh;
+    top: 124.15vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.brand_name-form__label {
+    margin: 0;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(15px, 1.6vw, 24px);
+}
+
+.brand_name-form__input {
+    width: 45vw;
+    height: 4.6vh;
+    border-width: 1px;
+    border-radius: 4px;
+    border: 1px solid #5F5F5F;
+    font-size: clamp(15px, 1.6vw, 24px);
+    color: #000000;
+}
+
+.description-form__group{
+    position: absolute;
+    width: 45vw;
+    height: 16.4vh;
+    top: 136.4vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.description-form__label {
+    margin: 0;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(15px, 1.6vw, 24px);
+}
+
+.description-form__input {
+    width: 45vw;
+    height: 12.75vh;
+    border-width: 1px;
+    border-radius: 4px;
+    border: 1px solid #5F5F5F;
+    font-size: clamp(15px, 1.6vw, 24px);
+    color: #000000;
+}
+
+.price-form__group{
+    position: absolute;
+    width: 45vw;
+    height: 8.3vh;
+    top: 156.45vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.price-form__label {
+    margin: 0;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(15px, 1.6vw, 24px);
+}
+
+.price-form__input {
+    width: 45vw;
+    height: 4.6vh;
+    padding-left: 4vw;
+    border-width: 1px;
+    border-radius: 4px;
+    border: 1px solid #5F5F5F;
+    font-size: clamp(15px, 1.6vw, 24px);
+    color: #000000;
+}
+
+.price-form__wrapper{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 45vw;
+    height: 4.5vh;
+}
+
+.yen-symbol {
+    position: absolute;
+    width: 2.5vw;
+    height: 2.8vh;
+    padding-left: 1vw;
+    padding-right: 2vw;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(15px, 1.6vw, 24px);
+    color: #000000;
+    pointer-events: none;
+}
+
+.sell-form__error-message {
+    display: block;
+    margin-top: 0;
+    color: red;
+    font-size: 14px;
+    margin-top: 1px;
+}
+
+.sell-form__btn {
+    position: absolute;
+    width: 44.97vw;
+    height: 6.15vh;
+    top: 176.7vh;
+    left: 27.55vw;
+    border: none;
+    background: #FF5555;
+    border-radius: 5px;
+    font-family: Inter;
+    font-weight: 700;
+    font-size: clamp(18px, 1.7vw, 26px);
+    text-align: center;
+    color: #fff;
 }

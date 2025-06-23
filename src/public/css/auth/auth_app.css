@@ -1,0 +1,18 @@
+.header {
+    width: auto;
+    height: 82px;
+    background-color: #000;
+}
+
+.header-logo img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 22px;
+    margin-left: 25px;
+}
+
+.body {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}

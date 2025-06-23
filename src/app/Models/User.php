@@ -11,7 +11,7 @@ use App\Models\Item;
 use App\Models\Address;
 use App\Models\Purchase;
 
-class User extends Authenticatable
+class User extends Authenticatable  implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -22,7 +22,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'account_name',
+        'profile_name',
         'email',
+        'email_verified_at',
         'password',
         'profile_name',
         'postal_code',

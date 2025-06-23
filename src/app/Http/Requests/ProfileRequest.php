@@ -27,4 +27,10 @@ class ProfileRequest extends FormRequest
             'icon' => 'nullable | mimes:jpeg,png',
         ];
     }
+    public function messages()
+    {
+        return [
+            'icon.mimes' => '画像には jpeg または png ファイルを指定してください',
+        ];
+    }
 }

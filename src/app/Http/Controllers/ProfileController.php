@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Requests\ProfileRequest;
 use App\Http\Requests\AddressRequest;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Profile;
-use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -24,10 +20,14 @@ class ProfileController extends Controller
 
         // プロフィールアイコンの処理
         if ($profileRequest->hasFile('icon')) {
+            if ($user->icon) {
+                Storage::disk('public')->delete(str_replace('storage/', '', $user->icon));
+            }
+
             $path = $profileRequest->file('icon')->store('icons', 'public');
-            $path = str_replace('public/', 'storage/', $path);
+            $path = 'storage/' . $path;
         } else {
-            $path = null;
+            $path = $user->icon;
         }
 
         // ユーザーデータを更新
@@ -39,7 +39,7 @@ class ProfileController extends Controller
             'icon' => $path,
         ]);
 
-        return redirect()->route('mypage.show');
+        return redirect('/');
     }
 
     public function update(AddressRequest $addressRequest, ProfileRequest $profileRequest)
@@ -64,9 +64,10 @@ class ProfileController extends Controller
         // アイコンの処理
         if ($profileRequest->hasFile('icon')) {
             if ($user->icon) {
-                Storage::disk('public')->delete($user->icon);
+                Storage::disk('public')->delete(
+                    str_replace('storage/', '', $user->icon));
             }
-            $data['icon'] = $profileRequest->file('icon')->store('icons', 'public');
+            $data['icon'] = 'storage/' .  $profileRequest->file('icon')->store('icons', 'public');
         }
 
         // 更新処理

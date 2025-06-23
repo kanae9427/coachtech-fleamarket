@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\AddressRequest;
 use App\Models\Item;
 
 class AddressController extends Controller

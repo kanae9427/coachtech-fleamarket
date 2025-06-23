@@ -22,7 +22,6 @@ class CreatePurchasesTable extends Migration
             $table->string('shipping_building_name');
             $table->string('payment_method');
             $table->string('status')->default('pending');
-            $table->boolean('sold')->default(false);
             $table->timestamps();
         });
     }

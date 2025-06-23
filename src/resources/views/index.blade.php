@@ -2,15 +2,15 @@
 
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/admin.css')}}">
+<link rel="stylesheet" href="{{ asset('css/index.css')}}">
 @endsection
 
 @section('content')
 <div class="toggle-buttons">
-    <a href="{{ url('/?tab=all') }}" class="toggle-button {{ request()->query('tab', 'all') === 'all' ? 'active' : '' }}">商品一覧</a>
+    <a href="{{ url('/?tab=all&search=' . request()->query('search', '')) }}" class="toggle-button {{ $viewType === 'all' ? 'active' : '' }}">おすすめ</a>
 
     @if(auth()->check())
-    <a href="{{ url('/?tab=mylist') }}" class="toggle-button {{ request()->query('tab') === 'mylist' ? 'active' : '' }}">マイリスト</a>
+    <a href="{{ url('/?tab=mylist&search=' . request()->query('search', '')) }}" class="toggle-button {{ $viewType === 'mylist' ? 'active' : '' }}">マイリスト</a>
     @else
     <a href="{{ route('login') }}" class="toggle-button">マイリスト</a>
     @endif
@@ -21,22 +21,22 @@
 <div class="items">
     @foreach ($items as $item)
     <div class="item">
-        <a href="{{ route('item.show', $item->id) }}">
-            <img src="{{ asset($item->image) }}" alt="{{ $item->name }}">
+        <a class="item-link" href="{{ route('item.show', $item->id) }}">
+            <img src="{{ asset($item->image) }}" alt="{{ $item->name }}"
+                onerror="this.style.display='none'; this.insertAdjacentHTML('afterend' , '<div class=\'image-placeholder\'>' + this.alt + '</div>');">
         </a>
 
-        <p>
-            <a href="{{ route('item.show', $item->id) }}">{{ $item->name }}</a>
+        <p class="item-label">
+            <a class="item-name" href="{{ route('item.show', $item->id) }}">{{ $item->name }}</a>
+            @if ($item->sold)
+            <span class="sold-label">sold</span>
+            @endif
         </p>
-
-        @if ($item->sold)
-        <span class="sold-label">sold</span>
-        @endif
     </div>
     @endforeach
 </div>
 @else
-<p class="no-items">現在、表示できる商品がありません。</p>
+<p></p>
 @endif
 
 

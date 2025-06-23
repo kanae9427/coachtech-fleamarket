@@ -1,0 +1,138 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: 82px;
+    background-color: #000;
+}
+
+.header-logo{
+    position: absolute;
+    left: 2.64vw;
+}
+.header-logo img {
+    width: 24.47vw;
+    max-width: 370px;
+    height: 36px;
+}
+
+.search-form {
+    position: absolute;
+    width: 37.25vw;
+    height: 80px;
+    left: 31vw;
+    top: 0px;
+}
+
+.form-control {
+    position: absolute;
+    left: 2vw;
+    top: 15px;
+    width: 33.1vw;
+    height: 50px;
+    font-size: 1.6vw;
+    color: #000;
+    background: #FFFFFF;
+    border-radius:5px;
+}
+
+.form-control::placeholder {
+    position: absolute;
+    font-family: Inter;
+    width: 21.8vw;
+    height: 29;
+    left: 3.5vw;
+    font-weight: 400;
+    font-size: clamp(16px, 1.6vw, 24px);
+    align-items: center;
+    color: #000;
+    opacity: 1;
+}
+
+.header-actions {
+    position: absolute;
+    width: 30.6vw;
+    height: 82px;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+
+.header__login-link{
+    position: absolute;
+    padding: 0;
+    width: 8.95vw;
+    height: 3.9vh;
+    top: 2.1vh;
+    left: 2.45vw;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: clamp(13px, 1.6vw, 24px);
+    line-height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.header__logout-link{
+    position: absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    padding: 0;
+    width: 8.95vw;
+    height: 3.9vh;
+    top: 2.1vh;
+    left: 2.45vw;
+    display: flex;
+    justify-content: center;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: clamp(12.5px, 1.6vw, 24px);
+    line-height: 100%;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.header__mypage-link {
+    position: absolute;
+    padding: 0;
+    width: 8.95vw;
+    height: 3.9vh;
+    top: 2.1vh;
+    left: 12vw;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: clamp(13px, 1.6vw, 24px);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.header__sell-button {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(60px, 7vw, 100px);
+    height: clamp(30px, 5.25vh, 50px);
+    top: 1.9vh;
+    left: 22.3vw;
+    background-color: #FFFFFF;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 1.6vw, 24px);
+    line-height: 29px;
+    text-decoration: none;
+    border-radius: 4px;
+    color: #000;
+}
