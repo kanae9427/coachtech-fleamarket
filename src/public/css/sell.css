@@ -1,35 +1,22 @@
 .sell-form{
+    padding:clamp(40px, 5vh, 50px) clamp(228px, 29.7vw, 416px) 5em;
+}
+.sell-form__inner{
+    width: 45vw;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .sell-form__heading {
-    position: absolute;
-    width: 19.92vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
     height: 4.5vh;
-    margin: 0;
-    top: 13.41vh;
-    left: 50%;
-    transform: translateX(-50%);
     font-family: Inter;
     font-weight: 700;
     font-size: clamp(25px, 2.4vw, 36px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.image-form__group{
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 45vw;
-    height: 19vh;
-    top: 22.2vh;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .image-form__heading{
@@ -41,6 +28,7 @@
     font-weight: 700;
     font-size: clamp(16px, 1.6vw, 24px);
 }
+
 .image-box{
     display: flex;
     align-items: center;
@@ -72,15 +60,7 @@
 }
 
 .sell-form__subheading--first{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    width: 45vw;
-    height: 4.9vh;
-    margin: 0;
-    top: 48.3vh;
-    left: 27.53vw;
+    margin-top: 2em;
     font-family: Inter;
     font-weight: 700;
     font-size: clamp(20px, 2vw, 30px);
@@ -91,14 +71,7 @@
 }
 
 .category__group{
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    width: 45vw;
-    height: 23.95vh;
-    top: 56.89vh;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 3em;
 }
 
 .category-form__group{
@@ -106,6 +79,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
 }
+
 .category-form__heading{
     width: 45vw;
     height: 3.7vh;
@@ -143,21 +117,11 @@
 }
 
 .condition-form__group{
-    position: absolute;
-    flex-direction: column;
-    align-items: center;
-    width: 45vw;
-    height: 9.5vh;
-    top: 87.4vh;
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: 5em;
 }
 
 .condition-form__label{
-    width: 45vw;
-    height: 3.7vh;
     margin: 0;
-    top: 22.2vh;
     font-family: Inter;
     font-weight: 700;
     font-size: clamp(16px, 1.6vw, 24px);
@@ -170,6 +134,7 @@
     width: 45vw;
     height: 4.5vh;
 }
+
 .condition-form__select{
     width: 45vw;
     height: 4.5vh;
@@ -178,7 +143,6 @@
     font-family: Inter;
     font-weight: 700;
     font-size: clamp(10px, 1.3vw, 16px);
-    color: #5F5F5F;
     border-width: 1px;
     border-radius: 4px;
     border: 1.5px solid #B1B1B1;
@@ -211,15 +175,7 @@
 }
 
 .sell-form__subheading--second {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    width: 45vw;
-    height: 4.7vh;
-    margin: 0;
-    top: 103.9vh;
-    left: 27.53vw;
+    margin-top: 2em;
     font-family: Inter;
     font-weight: 700;
     font-size: clamp(20px, 2vw, 30px);
@@ -229,16 +185,10 @@
     transform: rotate(0deg);
 }
 
-.name-form__group{
-    position: absolute;
-    width: 45vw;
-    height: 8.3vh;
-    top: 112.25vh;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.name-form__label {
+.name-form__label,
+.brand_name-form__label,
+.description-form__label,
+.price-form__label {
     margin: 0;
     font-family: Inter;
     font-weight: 700;
@@ -255,20 +205,10 @@
     color: #000000;
 }
 
-.brand_name-form__group{
-    position: absolute;
-    width: 45vw;
-    height: 8.3vh;
-    top: 124.15vh;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.brand_name-form__label {
-    margin: 0;
-    font-family: Inter;
-    font-weight: 700;
-    font-size: clamp(15px, 1.6vw, 24px);
+.brand_name-form__group,
+.description-form__group,
+.price-form__group{
+    margin-top: 2em;
 }
 
 .brand_name-form__input {
@@ -281,22 +221,6 @@
     color: #000000;
 }
 
-.description-form__group{
-    position: absolute;
-    width: 45vw;
-    height: 16.4vh;
-    top: 136.4vh;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.description-form__label {
-    margin: 0;
-    font-family: Inter;
-    font-weight: 700;
-    font-size: clamp(15px, 1.6vw, 24px);
-}
-
 .description-form__input {
     width: 45vw;
     height: 12.75vh;
@@ -305,22 +229,6 @@
     border: 1px solid #5F5F5F;
     font-size: clamp(15px, 1.6vw, 24px);
     color: #000000;
-}
-
-.price-form__group{
-    position: absolute;
-    width: 45vw;
-    height: 8.3vh;
-    top: 156.45vh;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.price-form__label {
-    margin: 0;
-    font-family: Inter;
-    font-weight: 700;
-    font-size: clamp(15px, 1.6vw, 24px);
 }
 
 .price-form__input {
@@ -364,11 +272,9 @@
 }
 
 .sell-form__btn {
-    position: absolute;
     width: 44.97vw;
     height: 6.15vh;
-    top: 176.7vh;
-    left: 27.55vw;
+    margin-top: 4em;
     border: none;
     background: #FF5555;
     border-radius: 5px;

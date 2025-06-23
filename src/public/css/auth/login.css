@@ -1,50 +1,46 @@
 .content {
-    position: absolute;
-    width: 680px;
-    height: auto;
-    min-height: 656px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 178px;
-    box-sizing: border-box;
+    padding: clamp(40px, 5vh, 50px) clamp(200px, 29.7vw, 416px) 5em;
+}
+
+.login-form__inner {
+    width: 45vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .login-form__heading {
-    position: relative;
-    margin: 0px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 48px;
+    margin-bottom: 30px;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 36px;
+    font-size: clamp(25px, 2.4vw, 36px);
     line-height: 100%;
     color: #000000;
-    width: 144px;
-    height: 48px;
-    left: 257px;
-    margin-bottom: 30px;
 }
 
 .login-form__group {
     display: flex;
     flex-direction: column;
-    padding-bottom: 25px;
+    padding-bottom: 2em;
 }
 
 .login-form__label {
-    position: relative;
     font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
+    font-size: clamp(16px, 1.6vw, 24px);
     line-height: 29px;
     letter-spacing: 0%;
-    width: 680px;
-    height: 35px;
+    height: clamp(25px, 2.3vw, 35px);
     color: #000000;
 }
 
 .login-form__input {
-    width: 680px;
-    height: 57.09px;
-    font-size: 26px;
+    height: clamp(47px, 6.1vh, 60px);
+    font-size: clamp(18px, 1.7vw, 26px);
     border: 1px solid #5F5F5F;
     border-radius: 4px;
     margin-bottom: 2px;
@@ -58,8 +54,8 @@
 }
 
 .login-form__btn {
-    width: 680px;
-    height: 65.25px;
+    width: 45vw;
+    height: clamp(50px, 6.6vh, 65.25px);
     margin-top: 20px;
     margin-bottom: 15px;
     background: #FF5555;
@@ -68,37 +64,26 @@
 }
 
 input[type="submit"] {
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 26px;
-    line-height: 31px;
     align-items: center;
     text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: clamp(18px, 1.7vw, 26px);
     background: #FF5555;
     color: #fff;
     cursor: pointer;
 }
 
 .register__link {
-    position: absolute;
-    width: 257px;
-    height: 53.29px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 69.32%;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin-top: 1em;
 }
 
 .switch-to-register {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: clamp(12px, 1.3vw, 20px);
+    line-height: clamp(16px, 1.6vw, 24px);
     text-decoration: none;
     color: #0073CC;
 }

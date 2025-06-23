@@ -30,10 +30,10 @@
             </div>
             <input class="login-form__btn" type="submit" value="ログインする">
         </form>
-    </div>
-</div>
 
-<div class="register__link">
-    <a class="switch-to-register" href="/register">会員登録の方はこちら</a>
+        <div class="register__link">
+            <a class="switch-to-register" href="/register">会員登録の方はこちら</a>
+        </div>
+    </div>
 </div>
 @endsection

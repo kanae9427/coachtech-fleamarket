@@ -15,7 +15,7 @@
         <header class="header">
             <div class="header-logo">
                 <a href="{{ route('home') }}">
-                    <img src="{{ asset('img/logo.svg') }}" alt="サイトロゴ" style="width:370px;height:36px;">
+                    <img src="{{ asset('img/logo.svg') }}" alt="サイトロゴ">
                 </a>
             </div>
         </header>

@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="register-form">
-    <form class="register-form__form" action="{{ route('register') }}" method="post">
-        @csrf
-        <div class="register-form__inner">
+    <div class="register-form__inner">
+        <form class="register-form__form" action="{{ route('register') }}" method="post">
+            @csrf
             <h2 class="register-form__heading">会員登録</h2>
             <div class="register-form__group">
                 <label class="register-form__label" for="name">ユーザー名</label>
@@ -46,15 +46,15 @@
                     @enderror
                 </p>
             </div>
-        </div>
 
-        <div class="form-submit">
-            <input class="register-form__btn btn" type="submit" value="登録する">
-        </div>
-    </form>
-</div>
+            <div class="form-submit">
+                <input class="register-form__btn btn" type="submit" value="登録する">
+            </div>
+        </form>
 
-<div class="login__link">
-    <a class="switch-to-login" href="/login">ログインはこちら</a>
+        <div class="login__link">
+            <a class="switch-to-login" href="/login">ログインはこちら</a>
+        </div>
+    </div>
 </div>
 @endsection
